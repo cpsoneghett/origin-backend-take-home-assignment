@@ -1,6 +1,7 @@
 package com.origin.challenge.api.enums;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum OwnershipStatus {
 
@@ -12,6 +13,7 @@ public enum OwnershipStatus {
 		this.status = status;
 	}
 
+	@JsonValue
 	public String getStatus() {
 		return this.status;
 	}
@@ -27,10 +29,5 @@ public enum OwnershipStatus {
 		throw new IllegalArgumentException(
 				"It was not possible convert to class " + OwnershipStatus.class + " from input string " + input);
 
-	}
-
-	@Override
-	public String toString() {
-		return this.status;
 	}
 }

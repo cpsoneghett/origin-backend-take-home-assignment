@@ -1,6 +1,7 @@
 package com.origin.challenge.api.enums;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum MaritalStatus {
 
@@ -12,6 +13,7 @@ public enum MaritalStatus {
 		this.status = status;
 	}
 
+	@JsonValue
 	public String getStatus() {
 		return status;
 	}

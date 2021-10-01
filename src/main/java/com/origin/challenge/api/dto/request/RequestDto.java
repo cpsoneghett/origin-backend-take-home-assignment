@@ -60,11 +60,39 @@ public class RequestDto {
 		return vehicle;
 	}
 
+	public void setAge(Integer age) {
+		this.age = age;
+	}
+
+	public void setDependents(Integer dependents) {
+		this.dependents = dependents;
+	}
+
+	public void setHouse(HouseDto house) {
+		this.house = house;
+	}
+
+	public void setIncome(Double income) {
+		this.income = income;
+	}
+
+	public void setMaritalStatus(MaritalStatus maritalStatus) {
+		this.maritalStatus = maritalStatus;
+	}
+
+	public void setRiskQuestions(List<Integer> riskQuestions) {
+		this.riskQuestions = riskQuestions;
+	}
+
+	public void setVehicle(VehicleDto vehicle) {
+		this.vehicle = vehicle;
+	}
+
 	@Override
 	public String toString() {
 		return "RequestDto [age=" + age + ", dependents=" + dependents + ", house=" + house + ", income=" + income
-				+ ", maritalStatus=" + maritalStatus + ", riskQuestions=" + riskQuestions + ", vehicle=" + vehicle
-				+ "]";
+				+ ", maritalStatus=" + maritalStatus + ", riskQuestions=" + riskQuestions
+				+ ", vehicle year=" + vehicle + "]";
 	}
 
 }

@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.origin.challenge.api.dto.request.RequestDto;
 import com.origin.challenge.api.dto.response.ResponseDto;
-import com.origin.challenge.api.service.InsuranceRiskService;
+import com.origin.challenge.api.service.impl.InsuranceRiskServiceImpl;
 
 @RestController
 @RequestMapping("/insurance-risk")
 public class InsuranceRiskRestController {
 
 	@Autowired
-	private InsuranceRiskService insuranceRiskService;
+	private InsuranceRiskServiceImpl insuranceRiskService;
 
 	@PostMapping("/calc")
 	public ResponseEntity<ResponseDto> calculateInsuranceRisk(@Valid @RequestBody RequestDto input) {

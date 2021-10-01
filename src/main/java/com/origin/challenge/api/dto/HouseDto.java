@@ -13,12 +13,25 @@ public class HouseDto {
 	@JsonProperty("ownership_status")
 	private OwnershipStatus ownershipStatus;
 
+	public HouseDto() {
+		super();
+	}
+
+	public HouseDto(@NotNull OwnershipStatus status) {
+		this.ownershipStatus = status;
+	}
+
 	public OwnershipStatus getOwnershipStatus() {
 		return ownershipStatus;
 	}
 
 	public void setOwnershipStatus(OwnershipStatus ownershipStatus) {
 		this.ownershipStatus = ownershipStatus;
+	}
+
+	@Override
+	public String toString() {
+		return "HouseDto [ownershipStatus=" + ownershipStatus + "]";
 	}
 
 }
