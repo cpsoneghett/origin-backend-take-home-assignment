@@ -2,7 +2,9 @@ package com.origin.challenge.api.dto.request;
 
 import java.util.List;
 
+import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -28,7 +30,8 @@ public class RequestDto {
 	private MaritalStatus maritalStatus;
 
 	@JsonProperty("risk_questions")
-	private List<Integer> riskQuestions;
+	@NotEmpty(message = "Input risk questions should not be empty")
+	private List<@Min(0) @Max(1) Integer> riskQuestions;
 
 	private VehicleDto vehicle;
 
@@ -91,8 +94,8 @@ public class RequestDto {
 	@Override
 	public String toString() {
 		return "RequestDto [age=" + age + ", dependents=" + dependents + ", house=" + house + ", income=" + income
-				+ ", maritalStatus=" + maritalStatus + ", riskQuestions=" + riskQuestions
-				+ ", vehicle year=" + vehicle + "]";
+				+ ", maritalStatus=" + maritalStatus + ", riskQuestions=" + riskQuestions + ", vehicle year=" + vehicle
+				+ "]";
 	}
 
 }

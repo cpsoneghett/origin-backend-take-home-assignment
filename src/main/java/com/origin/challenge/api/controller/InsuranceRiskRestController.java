@@ -14,6 +14,10 @@ import com.origin.challenge.api.dto.request.RequestDto;
 import com.origin.challenge.api.dto.response.ResponseDto;
 import com.origin.challenge.api.service.impl.InsuranceRiskServiceImpl;
 
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
+
 @RestController
 @RequestMapping("/insurance-risk")
 public class InsuranceRiskRestController {
@@ -22,6 +26,9 @@ public class InsuranceRiskRestController {
 	private InsuranceRiskServiceImpl insuranceRiskService;
 
 	@PostMapping("/calc")
+	@ApiOperation(value = "Get the insurance risk information of a User")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Insurance risk calculated successfully!"),
+			@ApiResponse(code = 400, message = "Bad request") })
 	public ResponseEntity<ResponseDto> calculateInsuranceRisk(@Valid @RequestBody RequestDto input) {
 
 		return ResponseEntity.status(HttpStatus.OK).body(insuranceRiskService.calculateInsuranceRisk(input));
